@@ -1,0 +1,298 @@
+// @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700,800');
+@import url(//db.onlinewebfonts.com/c/cde8cf60fc5af2eae40d1222d8bbd58e?family=Adobe+Garamond+Pro);
+@font-face {font-family: "Adobe Garamond Pro";
+    src: url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.eot");
+    src: url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.svg#Adobe Garamond Pro") format("svg");
+}
+
+html,
+body {
+  font-family: "Adobe Garamond Pro", serif;
+  // font-weight: 500;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+/*-----------------------------------------------------*/
+/* ----- Header
+/*-----------------------------------------------------*/
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+
+  // Navigation
+  .nav {
+    display: grid;
+    grid-template-columns: 240px auto 240px;
+    align-items: center;
+    height: 140px;
+    font-size: 24px;
+    
+    .nav__previous a,
+    .nav__next a {
+      color: grey;
+      border-bottom: 1px solid #888;
+    }
+    
+    .nav__previous,
+    .nav__next {
+      // border: 1px solid #888;
+      text-align: right;
+      vertical-align: middle;
+      
+    }
+    
+    .nav__previous:before,
+    .nav__next:after {
+      vertical-align: middle;
+      font-family: serif;
+      font-weight: 400;
+      color: #888;
+    }
+    
+    // Previous
+    .nav__previous:before {
+      content: "————";
+      margin: 0 5px 0 40px;
+    }
+    
+    // Next
+    .nav__next:after {
+      content: "————";
+      margin: 0 40px 0 5px;
+      right: 20px;
+    }
+
+    // Title
+    .nav__title {
+      text-align: center;
+      font-size: 25px;
+      // font-weight: 600;
+    }
+    .nav__title:before,
+    .nav__title:after {
+      content: "‧";
+      position: relative;
+    }
+    .nav__title:before {
+      top: -20px;
+      left: 63.5px;
+    }
+    .nav__title:after {
+      bottom: -25px;
+      left: -63.5px;
+    }
+  }
+}
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+/* ----- Intro
+/*-----------------------------------------------------*/
+.intro {
+  display: grid;
+  height: 100%;
+  position: relative;
+  
+  .intro-row--footer {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    line-height: 40px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    
+    a {
+      color: grey;
+      border-bottom: 1px solid grey;
+    }    
+  }
+}
+
+// Rows
+.intro-row {
+  // border: 1px solid blue;
+}
+
+// Columns
+.intro-columns {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+// Left Column
+.intro-column--left {
+  display: grid;
+  grid-template-columns: 100px auto 240px;
+  // background-color: snow;
+}
+.intro__social-container {
+  // border: 1px solid skyblue;
+  position: relative;
+}
+
+.intro__title {
+  display: grid;
+  grid-template-rows: auto 90px;
+  position: relative;
+  
+  h1 {
+    // border: 1px solid grey;
+    position: absolute;
+    top: 24%;
+    left: 3%;
+    font-size: 135px;
+    letter-spacing: -4px;
+    
+  }
+  
+  .intro-row--last {
+    // border: 1px solid grey;
+    display: grid;
+    grid-template-columns: 70px auto 40%;
+    line-height: 50px;
+    font-size: 12px;
+    font-family: serif;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+}
+
+.intro__divider {
+  overflow: hidden;
+  text-align: center;
+  margin: 0 20px 0 5px;
+}
+
+.intro__text {
+  display: grid;
+  grid-template-rows: auto 90px;
+  // border: 1px solid skyblue;
+  position: relative;
+  p {
+    // border: 1px solid grey;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 100px;
+    padding: 0 35px 35px 0;
+  }
+  p:before {
+    content: "———————————————————";
+    font-family: serif;
+    font-weight: 600;
+    position: absolute;
+    display: block;
+    top: -25px;
+    z-index: 1;
+  }
+  
+  .intro__text-info {
+    // border: 1px solid coral;
+    height: 100px;
+    font-size: 22.5px;
+    font-weight: 500;
+    line-height: 50px;
+    vertical-align: middle;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Right Column
+.intro-column--right {
+  background-color: #ede0df;
+  display: grid;
+  grid-template-columns: auto 125px;
+}
+
+.project {
+  // border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://i.imgur.com/U1izvNQ.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  // grid-template-rows: 45px auto 45px;
+  
+  &__photo {
+    width: 50%;
+    height: 85%;
+    // top: 5%;
+    // margin-bottom: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://i.imgur.com/RJn6StS.png');
+  }
+}
+
+.projects-nav {
+  // border: 1px solid seagreen;
+}
+
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+/* ----- Social
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+/* ----- Social
+/*-----------------------------------------------------*/
+.social {
+  // border: 1px solid grey;
+  vertical-align: middle;
+  font-family: serif;
+  font-weight: 600;
+  
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 360px;
+  height: 40px;
+  transform: rotate(-90deg);
+
+  position: absolute;
+  left: -145px;
+  bottom: 260px;
+
+
+  a {
+    color: black;
+    vertical-align: middle;
+    font-family: 'EB Garamond', serif;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+  }
+}
+
+.social:after {
+  content: "———————";
+}
+/*-----------------------------------------------------*/
+
