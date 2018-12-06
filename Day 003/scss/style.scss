@@ -1,4 +1,6 @@
-// @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700,800');
+/*-----------------------------------------------------*/
+/* ----- Fonts
+/*-----------------------------------------------------*/
 @import url(//db.onlinewebfonts.com/c/cde8cf60fc5af2eae40d1222d8bbd58e?family=Adobe+Garamond+Pro);
 @font-face {font-family: "Adobe Garamond Pro";
     src: url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.eot");
@@ -8,20 +10,38 @@
     url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.ttf") format("truetype"),
     url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.svg#Adobe Garamond Pro") format("svg");
 }
+/*-----------------------------------------------------*/
 
+
+/*-----------------------------------------------------*/
+/* ----- General
+/*-----------------------------------------------------*/
 html,
 body {
   font-family: "Adobe Garamond Pro", serif;
-  // font-weight: 500;
   height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-kerning: auto;
 }
 
 a {
   text-decoration: none;
+  display: inline-block;
+  
+  &:hover {
+    padding-bottom: 3px;
+    
+    a:before {
+      border: 1px solid red;
+      color: red;
+    }
+  }
 }
+/*-----------------------------------------------------*/
+
+
 /*-----------------------------------------------------*/
 /* ----- Header
 /*-----------------------------------------------------*/
@@ -167,9 +187,9 @@ a {
     grid-template-columns: 70px auto 40%;
     line-height: 50px;
     font-size: 12px;
-    font-family: serif;
     font-weight: 600;
     vertical-align: middle;
+    margin-left: 25px;
   }
 }
 
@@ -205,7 +225,7 @@ a {
   
   .intro__text-info {
     // border: 1px solid coral;
-    height: 100px;
+    height: 90px;
     font-size: 22.5px;
     font-weight: 500;
     line-height: 50px;
@@ -218,7 +238,7 @@ a {
 .intro-column--right {
   background-color: #ede0df;
   display: grid;
-  grid-template-columns: auto 125px;
+  grid-template-columns: auto 120px;
 }
 
 .project {
@@ -228,15 +248,14 @@ a {
   align-items: center;
   background-image: url('https://i.imgur.com/U1izvNQ.png');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 85% 100%;
   background-position: center;
   // grid-template-rows: 45px auto 45px;
   
   &__photo {
-    width: 50%;
-    height: 85%;
-    // top: 5%;
-    // margin-bottom: 5px;
+    width: 63%;
+    height: 86%;
+    left: 10%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -246,6 +265,46 @@ a {
 
 .projects-nav {
   // border: 1px solid seagreen;
+  display: flex;
+  align-items: center;
+  
+  span {
+    display: block;
+  }
+  
+  &__container {
+    // border: 2px solid skyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 400px;
+    position: relative;
+    right: 5px;
+  }
+  
+  &__project-01, &__project-02, &__project-03, &__project-04 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  &__project-selected {
+    font-size: 50px;
+    font-weight: 400;
+    height: 205px;
+    position: relative;
+    right: -3px;
+  }
+  
+  &__project-selected:after {
+    content: "";
+    padding: 70px 0px;
+    border-right: 1px solid black;
+    position: absolute;
+    top: 72px;
+    // bottom: 0;
+    right: 11px;
+  }  
 }
 
 /*-----------------------------------------------------*/
@@ -265,8 +324,8 @@ a {
 .social {
   // border: 1px solid grey;
   vertical-align: middle;
-  font-family: serif;
   font-weight: 600;
+  letter-spacing: 0.25px;
   
   display: flex;
   justify-content: space-evenly;
@@ -277,14 +336,13 @@ a {
   transform: rotate(-90deg);
 
   position: absolute;
-  left: -145px;
-  bottom: 260px;
+  left: -115px;
+  bottom: 340px;
 
 
   a {
     color: black;
     vertical-align: middle;
-    font-family: 'EB Garamond', serif;
     font-size: 12px;
     font-weight: 700;
     border-bottom: 1px solid black;
@@ -292,6 +350,8 @@ a {
 }
 
 .social:after {
+  font-family: serif;
+  letter-spacing: 0px;
   content: "———————";
 }
 /*-----------------------------------------------------*/

@@ -1,0 +1,156 @@
+/*-----------------------------------------------------*/
+/* ----- Body
+/*-----------------------------------------------------*/
+body {
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+/*-----------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------*/
+/* ----- Frame
+/*-----------------------------------------------------*/
+.frame {
+	height: 300px;
+	width: 300px;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+	// box-shadow: 20px 20px 100px hsla(6, 93%, 11%, 0.3);
+	box-shadow: 30px 30px 120px rgba(250, 128, 114, 0.2);
+}
+/*-----------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------*/
+/* ----- Menu
+/*-----------------------------------------------------*/
+// Variables
+$menu__line--height: 15px;
+$menu__line--space: 30px;
+$menu__line--offsetY: $menu__line--height + $menu__line--space;
+$menu--height: (3 * $menu__line--height) + (2 * $menu__line--space);
+$menu--width: (3 * $menu__line--height) + (3 * $menu__line--space);
+$menu__line--radius: ($menu__line--height / 5);
+
+.menu {
+	height: $menu--height;
+	width: $menu--width;
+	
+	&__line {
+		height: $menu__line--height;
+		background-color: white;
+		border-radius: $menu__line--radius;
+		
+		&--middle {
+			margin: $menu__line--space 0;	
+		}
+	}
+}
+
+// Deactivates animations until first click
+.anim-inactive {
+	-webkit-animation: none !important;
+	animation: none !important; 
+}
+
+// Start Animations
+.anim-start {
+	.menu {
+		&__line--top { animation: line-top 0.7s ease-in-out forwards;	}
+		&__line--middle {	animation: line-middle 0.7s ease-in-out forwards;	}
+		&__line--bottom { animation: line-bottom 0.7s ease-in-out forwards;	}
+	}
+	
+	// 	Top Line
+	@keyframes line-top {
+		0% {
+			transform: translate3d(0, 0, 0) rotate(0deg);
+		}
+		50% {
+			transform: translate3d(0, $menu__line--offsetY, 0) rotate(0);
+		}
+		100% {
+			transform: translate3d(0, $menu__line--offsetY, 0) rotate(45deg);
+		}
+	}
+
+	// 	Middle Line
+	@keyframes line-middle {
+		0% {
+			opacity: 1;	transform: scale(1);
+		}
+		100% {
+			opacity: 0;	transform: scale(-0.5);
+		}
+	}
+
+	// Bottom Line
+	@keyframes line-bottom {
+		0% {
+			transform: translate3d(0, 0, 0) rotate(0deg);
+		}
+		50% {
+			transform: translate3d(0, -$menu__line--offsetY, 0) rotate(0);
+		}
+		100% {
+			transform: translate3d(0, -$menu__line--offsetY, 0) rotate(-45deg);
+		}
+	}
+}
+
+
+// End Animations
+.anim-end {
+	.menu {
+		&__line--top { animation: line-top-undo 0.7s ease-in-out forwards; }
+		&__line--middle { animation: line-middle-undo 0.7s ease-in-out forwards; }
+		&__line--bottom { animation: line-bottom-undo 0.7s ease-in-out forwards; }
+	}
+
+	// Top Line
+	@keyframes line-top-undo {
+		0% {
+			transform: translate3d(0, $menu__line--offsetY, 0) rotate(45deg);
+		}
+		50% {
+			transform: translate3d(0, $menu__line--offsetY, 0) rotate(0deg);
+		}
+		100% {
+			transform: translate3d(0, 0, 0) rotate(0deg);
+		}
+	}
+
+	// Middle Line
+	@keyframes line-middle-undo {
+		0% {
+				opacity: 0;
+				transform: scale(-0.5);
+		}
+		100% {
+				opacity: 1;
+				transform: scale(1);
+		}
+	}
+
+	// Bottom Line
+	@keyframes line-bottom-undo {
+		0% {
+			transform: translate3d(0, -$menu__line--offsetY, 0) rotate(-45deg);
+		}
+		50% {
+			transform: translate3d(0, -$menu__line--offsetY, 0) rotate(0deg);
+		}
+		100% {
+			transform: translate3d(0, 0, 0) rotate(0deg);
+		}
+	}
+}
+/*-----------------------------------------------------*/

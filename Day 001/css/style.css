@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Text+Me+One");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  box-shadow: 2px 2px 160px rgba(250, 128, 114, 0.5);
+}
+
+.banner__container {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 0 -25px;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  width: 240px;
+}
+
+.number {
+  position: relative;
+  z-index: 10;
+}
+
+.number:first-of-type {
+  width: 55px;
+}
+
+.number--one {
+  height: 100%;
+}
+.number--one .number--one__curl {
+  position: absolute;
+  top: 1px;
+  right: 23px;
+  height: 50px;
+  width: 25px;
+  background-color: black;
+  -webkit-transform: rotate(38deg);
+          transform: rotate(38deg);
+  border-bottom-right-radius: 5px 35px;
+}
+.number--one .number--one__curl .number--one__curl-inwards {
+  position: absolute;
+  top: -1px;
+  right: 15px;
+  content: "";
+  width: 15px;
+  height: 60px;
+  position: absolute;
+  background-image: linear-gradient(45deg, #ff9a9e -160%, #fad0c4 300%);
+  border-top-right-radius: 15% 30px;
+  border-bottom-right-radius: 40% 30px;
+}
+.number--one .number--one__body {
+  position: absolute;
+  top: 3px;
+  right: 0px;
+  height: 114px;
+  width: 20px;
+  background-color: black;
+  box-shadow: -3px 0px 0px salmon;
+}
+
+.number--zero {
+  width: 40px;
+  height: 80px;
+  border: 20px solid black;
+  border-radius: 40px;
+}
+
+.number--zero:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -20px;
+  right: 18px;
+  height: 25%;
+  border-right: 4px solid salmon;
+}
+
+.number--zero:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  right: 18px;
+  height: 25%;
+  border-right: 4px solid salmon;
+}
+
+.banner__title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 85px;
+  font-weight: 900;
+  margin: 0 0 0 29px;
+}
+
+.banner__subtitle {
+  font-family: 'Text Me One', monospace;
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin: -5px 0 0 32px;
+  font-weight: 600;
+}

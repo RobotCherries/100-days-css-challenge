@@ -1,0 +1,293 @@
+@charset "UTF-8";
+/*-----------------------------------------------------*/
+/* ----- Fonts
+/*-----------------------------------------------------*/
+@import url(//db.onlinewebfonts.com/c/cde8cf60fc5af2eae40d1222d8bbd58e?family=Adobe+Garamond+Pro);
+@font-face {
+  font-family: "Adobe Garamond Pro";
+  src: url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.eot");
+  src: url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.woff") format("woff"), url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/cde8cf60fc5af2eae40d1222d8bbd58e.svg#Adobe Garamond Pro") format("svg");
+}
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/* ----- General
+/*-----------------------------------------------------*/
+html,
+body {
+  font-family: "Adobe Garamond Pro", serif;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-kerning: auto;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover {
+  padding-bottom: 3px;
+}
+a:hover a:before {
+  border: 1px solid red;
+  color: red;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/* ----- Header
+/*-----------------------------------------------------*/
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.header .nav {
+  display: grid;
+  grid-template-columns: 240px auto 240px;
+  align-items: center;
+  height: 140px;
+  font-size: 24px;
+}
+.header .nav .nav__previous a,
+.header .nav .nav__next a {
+  color: grey;
+  border-bottom: 1px solid #888;
+}
+.header .nav .nav__previous,
+.header .nav .nav__next {
+  text-align: right;
+  vertical-align: middle;
+}
+.header .nav .nav__previous:before,
+.header .nav .nav__next:after {
+  vertical-align: middle;
+  font-family: serif;
+  font-weight: 400;
+  color: #888;
+}
+.header .nav .nav__previous:before {
+  content: "————";
+  margin: 0 5px 0 40px;
+}
+.header .nav .nav__next:after {
+  content: "————";
+  margin: 0 40px 0 5px;
+  right: 20px;
+}
+.header .nav .nav__title {
+  text-align: center;
+  font-size: 25px;
+}
+.header .nav .nav__title:before,
+.header .nav .nav__title:after {
+  content: "‧";
+  position: relative;
+}
+.header .nav .nav__title:before {
+  top: -20px;
+  left: 63.5px;
+}
+.header .nav .nav__title:after {
+  bottom: -25px;
+  left: -63.5px;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/* ----- Intro
+/*-----------------------------------------------------*/
+.intro {
+  display: grid;
+  height: 100%;
+  position: relative;
+}
+.intro .intro-row--footer {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  line-height: 40px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+.intro .intro-row--footer a {
+  color: grey;
+  border-bottom: 1px solid grey;
+}
+
+.intro-columns {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.intro-column--left {
+  display: grid;
+  grid-template-columns: 100px auto 240px;
+}
+
+.intro__social-container {
+  position: relative;
+}
+
+.intro__title {
+  display: grid;
+  grid-template-rows: auto 90px;
+  position: relative;
+}
+.intro__title h1 {
+  position: absolute;
+  top: 24%;
+  left: 3%;
+  font-size: 135px;
+  letter-spacing: -4px;
+}
+.intro__title .intro-row--last {
+  display: grid;
+  grid-template-columns: 70px auto 40%;
+  line-height: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: middle;
+  margin-left: 25px;
+}
+
+.intro__divider {
+  overflow: hidden;
+  text-align: center;
+  margin: 0 20px 0 5px;
+}
+
+.intro__text {
+  display: grid;
+  grid-template-rows: auto 90px;
+  position: relative;
+}
+.intro__text p {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 100px;
+  padding: 0 35px 35px 0;
+}
+.intro__text p:before {
+  content: "———————————————————";
+  font-family: serif;
+  font-weight: 600;
+  position: absolute;
+  display: block;
+  top: -25px;
+  z-index: 1;
+}
+.intro__text .intro__text-info {
+  height: 90px;
+  font-size: 22.5px;
+  font-weight: 500;
+  line-height: 50px;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+}
+
+.intro-column--right {
+  background-color: #ede0df;
+  display: grid;
+  grid-template-columns: auto 120px;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://i.imgur.com/U1izvNQ.png");
+  background-repeat: no-repeat;
+  background-size: 85% 100%;
+  background-position: center;
+}
+.project__photo {
+  width: 63%;
+  height: 86%;
+  left: 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://i.imgur.com/RJn6StS.png");
+}
+
+.projects-nav {
+  display: flex;
+  align-items: center;
+}
+.projects-nav span {
+  display: block;
+}
+.projects-nav__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 400px;
+  position: relative;
+  right: 5px;
+}
+.projects-nav__project-01, .projects-nav__project-02, .projects-nav__project-03, .projects-nav__project-04 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.projects-nav__project-selected {
+  font-size: 50px;
+  font-weight: 400;
+  height: 205px;
+  position: relative;
+  right: -3px;
+}
+.projects-nav__project-selected:after {
+  content: "";
+  padding: 70px 0px;
+  border-right: 1px solid black;
+  position: absolute;
+  top: 72px;
+  right: 11px;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/* ----- Social
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/* ----- Social
+/*-----------------------------------------------------*/
+.social {
+  vertical-align: middle;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 360px;
+  height: 40px;
+  transform: rotate(-90deg);
+  position: absolute;
+  left: -115px;
+  bottom: 340px;
+}
+.social a {
+  color: black;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid black;
+}
+
+.social:after {
+  font-family: serif;
+  letter-spacing: 0px;
+  content: "———————";
+}
+
+/*-----------------------------------------------------*/
